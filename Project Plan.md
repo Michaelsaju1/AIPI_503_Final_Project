@@ -25,10 +25,15 @@ Read in the kaggle dataset
 
 ## Requirements met:
 ✅ The python project MUST have a data analysis element
+
 ✅ The Python project MUST use an API
+
 ✅ The Python project MUST be hosted on the web using Streamlit
+
 ✅ The Python project MUST be hosted on Github
+
 ❌ Members of the team MUST be members of the Github repository (working on it)
+
 ❌ Instructors (that's me) MUST be invited to the repository (We need to know his username to add him)
 
 ## Things to still figure out:
