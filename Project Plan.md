@@ -2,10 +2,10 @@
 ## DELETE THIS WHEN COMPLETE WITH PROJECT!
 
 ### Setup
-Clone repository and open up workspace
-Start virtual environment
-Make sure the libraries are installed on the venv
-Read in the kaggle dataset
+1. Clone repository and open up workspace
+2. Start virtual environment
+3. Make sure the libraries are installed on the venv
+4. Read in the kaggle dataset
 
 ### Create a pipeline that:
 1. Cleans the data (removes all na values or imputes them with something)
@@ -38,5 +38,6 @@ Read in the kaggle dataset
 
 ## Things to still figure out:
 What is Daniel and Jared's email or username so I can add them to the repo?
+
 Should we all bring our computer and work on it together at the library (with ethan on ft ofc) 
   or are we like doing it off of one computer? That might be a dumb question but I wasn't sure lol
