@@ -1,5 +1,6 @@
 import pandas as pd
 import requests
+import matplotlib.pyplot as plt
 
 """
 Read the CSV and clean up the data
@@ -19,6 +20,10 @@ def read_and_process_data(file, country1, country2):
     
     print(co2_country1, ct_country1, energy_country1)
     print(co2_country2, ct_country2, energy_country2)
+
+    total_bytes_for_countries[country1]["gco2e"]=co2_country1
+    total_bytes_for_countries[country2]["gco2e"]=co2_country2
+    return total_bytes_for_countries
 
 """
 Call the API to calculate the carbon footprint
@@ -42,6 +47,13 @@ Run the data pipeline based on the information received from Streamlit
 def data_pipeline(data):
     pass
 
+def plot_country(data):
+    # Sort countries by emissions
+    top_countries =data.sort_values("gco2e", ascending=False)
+    plt.figure(figsize=(10,5))
+    plt.bar(top_countries[""], top_countries["gco2e"], color="green")
+    plt.xlabel("Country Type")
+    plt.ylabel("Total CO2 Emissions (g)")
+    plt.title("CO2 Emissions by Country Type")
+    plt.xticks(rotation=45)
 
-#if __name__ == "__main__":
-#   display_streamlit()
