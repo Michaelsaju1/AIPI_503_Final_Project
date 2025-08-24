@@ -5,9 +5,13 @@ import matplotlib.pyplot as plt
 """
 Read the CSV and clean up the data
 """
+def read_data(file):
+    df = pd.read_csv(file)
+    return df
+
 def read_and_process_data(file, country1, country2):
     df = pd.read_csv(file)
-    print("done reading csv")
+    #print("done reading csv")
 
     df = df[["bytes","country"]]
     
@@ -18,11 +22,14 @@ def read_and_process_data(file, country1, country2):
     co2_country1, ct_country1, energy_country1 = carbon_footprint(bytes_country1)
     co2_country2, ct_country2, energy_country2 = carbon_footprint(bytes_country2)
     
-    print(co2_country1, ct_country1, energy_country1)
-    print(co2_country2, ct_country2, energy_country2)
+    #print(co2_country1, ct_country1, energy_country1)
+    #print(co2_country2, ct_country2, energy_country2)
 
-    total_bytes_for_countries[country1]["gco2e"]=co2_country1
-    total_bytes_for_countries[country2]["gco2e"]=co2_country2
+    total_bytes_for_countries = total_bytes_for_countries.to_frame()
+    #print(type(total_bytes_for_countries))
+    total_bytes_for_countries.loc[country1, ["gco2e", "ct", "energy"]] = [co2_country1, ct_country1, energy_country1]
+    total_bytes_for_countries.loc[country2, ["gco2e", "ct", "energy"]] = [co2_country2, ct_country2, energy_country2]
+    
     return total_bytes_for_countries
 
 """
