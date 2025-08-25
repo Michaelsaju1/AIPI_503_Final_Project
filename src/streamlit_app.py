@@ -9,9 +9,9 @@ st.header("Carbon Emissions by Country")
 """
 This project calculates the carbon emission for countries you select from the dataset. A list of user sessions for a
 popular e-commerce website is the dataset we used. We group by the country and calculate the sum to determine the total
-amount of bytes used for each country. Our API is a carbon emissions calculator that takes in the total amount of bytes
-per country. It gives the Total CO2 emissions in grams, the percentage of websites it is cleaner than, and the energy
-used per each country.
+amount of bytes from the e-commerce dataset per country. The API we used is a carbon emissions calculator that takes in
+the amount of bytes from a website. It gives the total CO2 emissions in grams per cubic meter, the percentage of
+websites it is cleaner than, and the energy used per each country.
 """
 st.image(
     "https://www.greengeeks.com/blog/wp-content/uploads/2018/12/CO2-emission_header.jpg",
