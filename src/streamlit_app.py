@@ -26,13 +26,13 @@ submit_button = None
 # Input box
 df = functions.read_data("../data/ecommerce-website-logs.csv")
 user_input = st.multiselect(
-    "Please select two cities you would like the Carbon Emissions for below:",
+    "Please select at least two countries you would like the Carbon Emissions for below:",
     df['country'].unique())
 submit_button = st.button("Get Carbon Emissions")
 
 if submit_button:
     if len(user_input) < 2:
-        st.error("Please select two countries you would like the Carbon Emissions for above.")
+        st.error("Please select at least two countries you would like the Carbon Emissions for above.")
     else:
         df = functions.process_data("../data/ecommerce-website-logs.csv", user_input)
         bot_response = []
@@ -49,7 +49,7 @@ if submit_button:
             "bot": final_bot_response,
         })
 
-        st.write("Bar chart of countries selected:")
+        st.write("Carbon Emissions in CO2 g/m^3 by Country")
         st.bar_chart(df.set_index("country"))
 
 # 3. Display the chat history

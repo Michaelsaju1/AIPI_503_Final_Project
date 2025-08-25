@@ -1,6 +1,6 @@
 import functions
 
-print("Please enter at least 2 countries to compare its emissions from using an e-commerce website.")
+print("Please enter at least 2 countries to compare emissions from an e-commerce website.")
 
 print("All available countries are listed below:")
 df = functions.read_data("../data/ecommerce-website-logs.csv")
