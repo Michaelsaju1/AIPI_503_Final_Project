@@ -58,6 +58,5 @@ def plot_country(data):
     plt.xlabel("Country Type")
     plt.ylabel("Total CO2 Emissions (g)")
     plt.title("CO2 Emissions by Country Type")
-    plt.xticks(rotation=45)
     os.makedirs("../figures", exist_ok=True)
     plt.savefig("../figures/country-plot.png")

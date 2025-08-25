@@ -17,6 +17,6 @@ if not countries:
     print("No countries entered.")
 else:
     df = functions.process_data("../data/ecommerce-website-logs.csv", countries)
-    functions.plot_country(df)
     print(df)
-    print("Completed!")
+    functions.plot_country(df)
+    print("Completed! Plot saved in ../figures/country-plot.png")
