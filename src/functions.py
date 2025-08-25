@@ -26,7 +26,7 @@ def process_data(file, countries):
         g2coe, ct, energy = carbon_footprint(country_bytes)
         results.append([country, country_bytes, g2coe, ct, energy])
 
-    results_df = pd.DataFrame(results, columns=["country", "bytes", "g2coe", "ct", "energy"])
+    results_df = pd.DataFrame(results, columns=["country", "bytes", "gco2e", "ct", "energy"])
 
     return results_df
 
@@ -52,9 +52,9 @@ Uses Matplotlib to plot all of the countries and their g2coe
 """
 def plot_country(data):
     # Sort countries by emissions
-    top_countries = data.sort_values("g2coe", ascending=False)
+    top_countries = data.sort_values("gco2e", ascending=False)
     plt.figure(figsize=(10, 5))
-    plt.bar(top_countries['country'], top_countries["g2coe"], color="green")
+    plt.bar(top_countries['country'], top_countries["gco2e"], color="green")
     plt.xlabel("Country Type")
     plt.ylabel("Total CO2 Emissions (g)")
     plt.title("CO2 Emissions by Country Type")

@@ -1,4 +1,4 @@
-# AIPI_503_Final_Project
+# AIPI 503 Final Project
 
 This project calculates the carbon emission for countries you select from the dataset. A list of user sessions for a
 popular e-commerce website is the dataset we used. We group by the country and calculate the sum to determine the total
