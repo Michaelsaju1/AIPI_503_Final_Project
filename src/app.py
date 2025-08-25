@@ -1,10 +1,22 @@
 import functions
 
-print("Please enter 2 countries to compare its emissions from using an e-commerce website.")
-print("CA, MX, AT, NO, IT, RU, JP")
-country1 = input("Enter country 1: ")
-country2 = input("Enter country 2: ")
+print("Please enter at least 2 countries to compare its emissions from using an e-commerce website.")
 
-df = functions.read_and_process_data("../data/ecommerce-website-logs.csv", country1, country2)
+print("All available countries are listed below:")
+df = functions.read_data("../data/ecommerce-website-logs.csv")
+print(df['country'].unique())
 
-print("Completed!")
+countries = []
+while True:
+    country = input("Enter a country code (press Enter when you are done): ")
+    if country == "":
+        break
+    countries.append(country)
+
+if not countries:
+    print("No countries entered.")
+else:
+    df = functions.process_data("../data/ecommerce-website-logs.csv", countries)
+    functions.plot_country(df)
+    print(df)
+    print("Completed!")

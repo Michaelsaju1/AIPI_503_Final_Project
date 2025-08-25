@@ -6,13 +6,13 @@ from streamlit_chat import message
 if "history" not in st.session_state:
     st.session_state.history = []
 
-st.header("Carbon Emmissions by country")
+st.header("Carbon Emissions by Country")
 """
-This interface provides useful information to determine the carbon emmissions for the selected country from the user.
+This interface provides useful information to determine the carbon Emissions for the selected country from the user.
 """
 st.image(
     "https://www.greengeeks.com/blog/wp-content/uploads/2018/12/CO2-emission_header.jpg",
-    caption="Carbon Emmisions",
+    caption="Carbon Emissions",
     use_container_width=True
 )
 
@@ -30,7 +30,7 @@ submit_button = st.button("Get Carbon Emmissions")
 if submit_button:
     country1, country2 = user_input[0], user_input[1]
     #print(country1, country2)
-    df = functions.read_and_process_data("../data/ecommerce-website-logs.csv", country1, country2)
+    df = functions.process_data("../data/ecommerce-website-logs.csv", country1, country2)
     bot_response = (
     f"The Carbon Emissions for {country1} is {df.loc[country1, 'gco2e']:.2f} g/m^3. "
     f"The Carbon Emissions for {country2} is {df.loc[country2, 'gco2e']:.2f} g/m^3."
